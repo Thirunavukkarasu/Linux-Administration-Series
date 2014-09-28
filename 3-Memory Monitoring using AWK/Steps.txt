@@ -1,0 +1,5 @@
+/* Commands to be executed:- */
+
+Step 1: Calculate the memory usage percentage
+free -m|grep "Mem\|-"|awk 'NR==1 {total=$2} NR==2 { if( $3/total*100 >= 60) print "Critical!Memory running out!"; else print "Memory available!";}'
+

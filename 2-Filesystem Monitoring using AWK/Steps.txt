@@ -1,0 +1,8 @@
+/* Commands to be executed:- */
+
+Step 1: Create a large dummy file on a Linux system using fallocate command, you can also use dd command for this purpose
+fallocate -l 10G test.txt
+dd if=/dev/zero of=test.txt bs=1 count=1 seek=10M
+
+Step 2: Check the filesystem usage percentage using AWK, something like below.
+df -h |grep -v "File"|awk '{print $1" "$5}'|cut -d"%" -f1|awk '{if ($2 >=35) print $1 " Filesystem is full!"; else print $1 " Filesystem is very normal!";}'
