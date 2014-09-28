@@ -1,4 +1,4 @@
-Step 1: Install the needed packages
+/* Step 1: Install the needed packages */
 sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
 
 Step 2: Add the following content to the /etc/postfix/main.cf file
